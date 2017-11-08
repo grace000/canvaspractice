@@ -1,26 +1,26 @@
 // Dependencies
 // ===========================================================
 const express = require("express");
-const bodyParser = require("body-parser");
-const path = require("path");
+// const bodyParser = require("body-parser");
+// const path = require("path");
 const app = express();
 const PORT = 3002;
 
-//parse application/json
-app.use(bodyParser.json());
+// //parse application/json
+// app.use(bodyParser.json());
 
-//parse application/x-ww-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
+// //parse application/x-ww-form-urlencoded
+// app.use(bodyParser.urlencoded({ extended: true }));
 
-//parse an HTML body into a string
-app.use(bodyParser.text());
+// //parse an HTML body into a string
+// app.use(bodyParser.text());
 
-//parse various different custom JSON types as JSON
-app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+// //parse various different custom JSON types as JSON
+// app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 // Data
 // ===========================================================
-let characters = [{
+const characters = [{
   routeName: "yoda",
   name: "Yoda",
   role: "Jedi Master",
@@ -47,7 +47,8 @@ app.get("/", function(req, res) {
 });
 
 // Serve static files from the React app
-app.use(express.static(path.join(__dirname, 'client/build')));
+// app.use(express.stat`ic(path.join(__dirname, 'client/build')));
+app.use(express.static(`${__dirname}/client/build`));
 
 // Question mark signifies that the parameter is "optional".
 app.get("/api/:characters?", function(req, res) {
@@ -75,8 +76,13 @@ app.get("/api/:characters?", function(req, res) {
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// app.get('*', (req, res) => {
+//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
+// });
+
+// All remaining requests return the React app, so it can handle routing.
+app.get('*', function(request, response) {
+  response.sendFile(express.resolve`${__dirname}../client/build`, 'index.html');
 });
 
 // Listener
