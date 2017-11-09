@@ -2,9 +2,11 @@
 // ===========================================================
 const express = require("express");
 // const bodyParser = require("body-parser");
-// const path = require("path");
+const path = require("path");
 const app = express();
 const PORT = 3002;
+
+const generatePassword = require('password-generator');
 
 // //parse application/json
 // app.use(bodyParser.json());
@@ -47,43 +49,59 @@ app.get("/", function(req, res) {
 });
 
 // Serve static files from the React app
-// app.use(express.stat`ic(path.join(__dirname, 'client/build')));
-app.use(express.static(`${__dirname}/client/build`));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-// Question mark signifies that the parameter is "optional".
-app.get("/api/:characters?", function(req, res) {
-  // Grab the selected parameter
-  const chosen = req.params.characters;
+// app.use(express.static(`${__dirname}/client/build`));
 
-  // If a parameter is provided...
-  if (chosen) {
-    console.log(chosen);
+// // Question mark signifies that the parameter is "optional".
+// app.get("/api/:characters?", function(req, res) {
+//   // Grab the selected parameter
+//   const chosen = req.params.characters;
 
-    // Filter to show only the selected character
-    for (var i = 0; i < characters.length; i++) {
-      if (chosen === characters[i].routeName) {
-        return res.json(characters[i]);
-      }
-    }
+//   // If a parameter is provided...
+//   if (chosen) {
+//     console.log(chosen);
 
-    // Otherwise display "No character found"
-    return res.send("No character found");
-  }
+//     // Filter to show only the selected character
+//     for (var i = 0; i < characters.length; i++) {
+//       if (chosen === characters[i].routeName) {
+//         return res.json(characters[i]);
+//       }
+//     }
 
-  // If no parameter is provided display all the characters
-  return res.json(characters);
-});
+//     // Otherwise display "No character found"
+//     return res.send("No character found");
+//   }
+
+//   // If no parameter is provided display all the characters
+//   return res.json(characters);
+// });
 
 // The "catchall" handler: for any request that doesn't
 // match one above, send back React's index.html file.
-// app.get('*', (req, res) => {
-//   res.sendFile(path.join(__dirname+'/client/build/index.html'));
-// });
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname+'/client/build/index.html'));
+});
+
+// Put all API endpoints under '/api'
+app.get('/api/passwords', (req, res) => {
+  const count = 5;
+
+  // Generate some passwords
+  const passwords = Array.from(Array(count).keys()).map(i =>
+    generatePassword(12, false)
+  )
+
+  // Return them as json
+  res.json(passwords);
+
+  console.log(`Sent ${count} passwords`);
+});
 
 // All remaining requests return the React app, so it can handle routing.
-app.get('*', function(request, response) {
-  response.sendFile(express.resolve`${__dirname}../client/build`, 'index.html');
-});
+// app.get('*', function(request, response) {
+//   response.sendFile(express.resolve`${__dirname}../client/build`, 'index.html');
+// });
 
 // Listener
 // ===========================================================
