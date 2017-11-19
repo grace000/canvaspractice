@@ -162,7 +162,7 @@ body {
 
 #headshot {
 	/*margin: auto;*/
-    background-image: url(images/headshot.jpg);
+    background-image: url(./assets/images/headshot.jpg);
     background-size: cover;
     border-radius: 50%;
     display: inline-block;
@@ -535,7 +535,7 @@ transition-delay:.2s;
 
 #footer {
 	/*background-image:url(images/tilesfooter.png), center center repeat;*/
-	background:url(images/tilesfooter.png);
+	background:url(./assets/images/tilesfooter.png);
     height: 100px;
    /* min-height: 100px;*/
     color: #f2f2f2;
