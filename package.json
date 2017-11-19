@@ -10,6 +10,7 @@
   },
   "scripts": {
     "start": "node app.js",
+    "build:production": "node --version",
     "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
   }
 }
