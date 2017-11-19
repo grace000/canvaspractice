@@ -34,7 +34,7 @@ body {
 }
 
 .cartoon-image {
-	background: url(../assets/images/cartoonshot2.png);
+	background: url(./assets/images/cartoonshot2.png);
 	height: 300px;
 	width: 320px;
 	margin: auto;
