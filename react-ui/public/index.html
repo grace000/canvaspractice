@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
+    <script src="/js/jquery.min.js"></script>
+    <script src="/lib/jquery.plugin.js"></script>
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -36,6 +38,7 @@
         <canvas id="canvas" resize="true"></canvas>
     </div>
     <script type="text/paperscript" canvas="canvas">
+
         var voronoi = new Voronoi();
         var sites = generateBeeHivePoints(view.size / 200, true);
         var bbox, diagram;
@@ -156,8 +159,9 @@
             }
         }
     </script>
-    <!-- <script type="text/javascript" src="../../dist/paper-full.js"></script> -->
-    <script type="text/javascript" src="http://paperjs.org/assets/js/rhill-voronoi-core.js"></script>
+    <script type="text/javascript" src="../dist/paper-full.js"></script>
+    <script type="text/javascript" src="../dist/rhill-voronoi-core.js"></script>
+    <!-- <script type="text/javascript" src="http://paperjs.org/assets/js/rhill-voronoi-core.js"></script> -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.11.5/paper-full.js"></script>
     <!--
       This HTML file is a template.
