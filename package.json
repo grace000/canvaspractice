@@ -1,16 +1,21 @@
 {
   "name": "canvaspractice",
   "version": "1.0.0",
-  "main": "app.js",
-  "license": "MIT",
-  "dependencies": {
-    "body-parser": "^1.18.2",
-    "express": "^4.15.3",
-    "path": "^0.12.7"
+  "description": "A node/react project",
+  "engines": {
+    "node": "6.11.x"
   },
   "scripts": {
-    "start": "node app.js",
-    "build:production": "node --version",
-    "heroku-postbuild": "cd client && yarn --production=false && yarn run build"
-  }
+    "start": "node server",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "license": "MIT",
+  "devDependencies": {}
 }
