@@ -4,8 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
-    <script src="/js/jquery.min.js"></script>
-    <script src="/lib/jquery.plugin.js"></script>
+    <link rel="stylesheet" href="../src/animations.css">  
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -29,21 +28,36 @@
     </noscript>
     <div id="root"></div>
        <style type="text/css">
-    canvas, canvas[resize] {
+        canvas, canvas[resize] {
         width: 100%;
         height: 95vh;
         }
-    </style>
-    <div method="POST">
-        <canvas id="canvas" resize="true"></canvas>
+        </style>
+    <div method="POST" class="paperscript">
+        <canvas id="canvas" resize="true"><p>Coming Soon</p></canvas>
+        <div class="cartoon hatch">
+            <div class="cartoon-image">
+                <!-- <img class="cartoon-image" src="./assets/images/cartoonshot.png"> -->
+            </div>
+            
+        </div>
+
+         <!-- <div class="arrow bounce">
+          <span class="glyphicon glyphicon-chevron-down"></span>
+        </div> -->
     </div>
+  
+    <div class="arrow floating">
+      <span class="glyphicon glyphicon-chevron-down"></span>
+    </div>
+
     <script type="text/paperscript" canvas="canvas">
 
         var voronoi = new Voronoi();
         var sites = generateBeeHivePoints(view.size / 200, true);
         var bbox, diagram;
         var oldSize = view.size;
-        var spotColor = new Color('red');
+        var spotColor = new Color('#777DA7');
         var mousePos = view.center;
         var selected = false;
 
