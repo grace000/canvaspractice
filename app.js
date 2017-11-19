@@ -4,7 +4,7 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const path = require("path");
 const app = express();
-const PORT = 3002;
+const PORT = 8080;
 
 
 //parse application/json
@@ -18,6 +18,8 @@ app.use(bodyParser.text());
 
 //parse various different custom JSON types as JSON
 app.use(bodyParser.json({ type: "application/vnd.api+json" }));
+
+app.use(express.static(path.join(__dirname, 'client/build')));
 
 // Data
 // ===========================================================
@@ -43,11 +45,22 @@ const characters = [{
 
 // // Routes
 // // ===========================================================
-app.get("/", function(req, res) {
-  res.send("Welcome to the Star Wars Page!");
+// app.get("/welcome", function(req, res) {
+//   res.send("Welcome to the Star Wars Page!");
+// });
+
+// app.get("/", function(req, res) {
+//   res.sendFile(__dirname + "/client/build/index.html");
+// });
+
+app.get('/ping', function (req, res) {
+ return res.send('pong');
 });
 
-app.use(express.static(`${__dirname}/client/build`));
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+});
+
 
 // Question mark signifies that the parameter is "optional".
 app.get("/api/:characters?", function(req, res) {
@@ -76,7 +89,7 @@ app.get("/api/:characters?", function(req, res) {
 
 // All remaining requests return the React app, so it can handle routing.
 // app.get('*', function(request, response) {
-//   response.sendFile(express.resolve`${__dirname}../client/build`, 'index.html');
+//   response.sendFile(express`${__dirname}../client/build`, 'index.html');
 // });
 
 // Listener
