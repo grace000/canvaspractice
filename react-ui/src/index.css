@@ -4,7 +4,6 @@ body {
   font-family: sans-serif;
 }
 
-
 /*Paper ----------------------------------*/
 /*canvas, canvas[resize] {
     width: 100%;
@@ -484,13 +483,18 @@ transition-delay:.2s;
 	font-family: 'Montserrat', sans-serif;
 }
 
-#contact-header {
-	margin-top: 2vh;
+#contact-headertitle{
+	color: #885053;
+	font-family: 'Montserrat', sans-serif;
+	text-align: center;
 }
 
-#contact-header h1 {
+#contact-header {
 	font-family: 'Roboto', sans-serif;
-	color: #885053;
+	color: #61988E;
+	line-height: 1;
+	font-weight: normal;
+	margin-bottom: 1.8rem !important;
 }
 
 #contact-entry .form-control {
@@ -504,7 +508,7 @@ transition-delay:.2s;
     border: 2px solid #61988E;
     border-radius: 1px;
     box-shadow: none;
-    font-size: 16px;
+    font-size: 16px ;
     border-radius: 5px;
 }
 
@@ -531,6 +535,7 @@ transition-delay:.2s;
     font-size: 16px;
     border: none;
 }
+
 /*Contact Section -------------------------------------------------*/
 
 #footer {
