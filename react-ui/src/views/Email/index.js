@@ -11,7 +11,7 @@ import Footer from '../MainLayout/Footer'
 
 const ContactSection = {
 	minHeight: "80vh",
-	paddingBottom: "10vh",
+	paddingBottom: "5vh",
 	
 }
 

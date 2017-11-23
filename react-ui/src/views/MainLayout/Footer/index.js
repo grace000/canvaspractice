@@ -8,7 +8,7 @@ import Tiles from '../../../../src/assets/images/tilesfooter.png'
 
 
 const MainFooter = {
-    height: '15vh',
+    height: '10vh',
     margin: 'auto'
 }
 
