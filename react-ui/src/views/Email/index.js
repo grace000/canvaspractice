@@ -4,12 +4,10 @@ import 'semantic-ui-css/semantic.min.css'
 import { Icon, 
 		Header, 
 		Button, 
-		Form,
-	 	Message,
-	 	TextArea,
 	 	Divider,
-	 	Container, 
-	 	Grid  } from 'semantic-ui-react'
+	 	Container,
+	 	Grid } from 'semantic-ui-react'
+import Footer from '../MainLayout/Footer'
 
 const ContactSection = {
 	minHeight: "80vh",
@@ -18,8 +16,9 @@ const ContactSection = {
 }
 
 const ContactContainer = {
-	width: "50%",
-	marginTop: "8em",
+	minWidth: "200px",
+	maxWidth: "50%",
+	marginTop: "12em",
 	minHeight: "80vh",
 	paddingBottom: "10vh",
 }
@@ -29,7 +28,7 @@ const FormStyle = {
 	border: '5px solid pink'
 }
 
-const EmailText = {
+const ChatBox = {
 	lineHeight: "1.42857143",
     color: "#885053",
     backgroundColor: "#fff",
@@ -56,32 +55,21 @@ class Email extends Component {
     return (
       <div className="Email" style={ContactSection}>
       	<Container style={ContactContainer}>
-      		<Header id="contact-headertitle" as="h1">Site coming soon...</Header>
-	      	<Header id="contact-header" textAlign="center">Interested in collaborating, grabbing coffee, or just saying hello? <Divider hidden/> Feel free to send me a message!</Header>
-	      	<Form id="contact-entry" className="form-control">
-			    <Form.Field>
-			      <input className="form-control" placeholder='Your Name'/>
-			    </Form.Field>
-			    <Form.Field>
-			      <input className="form-control" placeholder='Your Email Address' />
-			    </Form.Field>
-			    <Form.Field>
-			      <Form.TextArea  style={EmailText} placeholder="Hey, let's chat!" />
-			    </Form.Field>
-			    <Grid column='centered'>
-			    	<Grid.Row>
-			    		<Grid.Column width='centered six'>
-			    			<Button style={ContactButton} type='submit' size='medium' content='SEND'></Button>
-			    		</Grid.Column>
-			    	</Grid.Row>
-			    </Grid>
-			    <Message
-			      success
-			      header='Form Completed'
-			      content="Talk to you soon!"
-			    />
-	  		</Form>
+      		<Header id="contact-maintenance" as="h1">Site coming soon...</Header>
+      	<Grid column='centered' style={{marginTop: '2em'}}>
+	    	<Grid.Row>
+	    		<Grid.Column width='centered six'>
+				    <Icon.Group size='massive' style={{color:'#61988E'}}>
+				    	<Icon loading size='large' name='setting' />
+				    	<Icon loading size='large' name='setting' />
+				    </Icon.Group>
+				    <Icon loading size='massive' name='setting' style={{color:'#61988E'}}/>
+	    		</Grid.Column>
+	    	</Grid.Row>
+	    </Grid>
   		</Container>
+  		
+  		<Footer />
       </div>
     )
   }
