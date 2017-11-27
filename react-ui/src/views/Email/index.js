@@ -2,25 +2,40 @@ import React, { Component } from 'react'
 import '../../index.css'
 import 'semantic-ui-css/semantic.min.css'
 import { Icon, 
+		Container,
 		Header, 
-		Button, 
-	 	Divider,
-	 	Container,
 	 	Grid } from 'semantic-ui-react'
 import Footer from '../MainLayout/Footer'
 
 const ContactSection = {
 	minHeight: "80vh",
-	paddingBottom: "5vh",
+	paddingBottom: "5vh"
 	
 }
+const Parallax = {
+    backgroundImage: 'url(https://t4.ftcdn.net/jpg/00/97/15/75/500_F_97157530_KV1ZLLeNp1wok83XG3EvPfmWZCl5Qv9a.jpg)',
+    minHeight: '80vh',
+
+    /* Create the parallax scrolling effect */
+    backgroundAttachment: 'fixed',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
+    backgroundSize: 'cover',
+    position:'absolute',
+    zIndex: '-50',
+    
+}
+
 
 const ContactContainer = {
 	minWidth: "200px",
 	maxWidth: "50%",
-	marginTop: "12em",
+	marginTop: "3em",
 	minHeight: "80vh",
+	paddingTop: '24vh',
 	paddingBottom: "10vh",
+	background: 'transparent',
+	
 }
 
 const FormStyle = {
@@ -54,16 +69,12 @@ class Email extends Component {
 
     return (
       <div className="Email" style={ContactSection}>
+      
       	<Container style={ContactContainer}>
-      		<Header id="contact-maintenance" as="h1">Site coming soon...</Header>
       	<Grid column='centered' style={{marginTop: '2em'}}>
 	    	<Grid.Row>
-	    		<Grid.Column width='centered six'>
-				    <Icon.Group size='massive' style={{color:'#61988E'}}>
-				    	<Icon loading size='large' name='setting' />
-				    	<Icon loading size='large' name='setting' />
-				    </Icon.Group>
-				    <Icon loading size='massive' name='setting' style={{color:'#61988E'}}/>
+	    		<Grid.Column width='centered'>
+				  <Header id="contact-maintenance">COMING SOON!</Header>
 	    		</Grid.Column>
 	    	</Grid.Row>
 	    </Grid>
