@@ -43,8 +43,11 @@ export default class SearchHeader extends Component{
 				        		   as={ Link } 
 				        		   to='/resume'
 				        		   style={MenuItem}/>
-				        <Menu.Item name='shop' 
+				        <Menu.Item name='shop'
+				        		   as = 'a' 
 				        		   href="https://amarasisters.com"
+				        		   target='_blank'
+				        		   rel="noopener noreferrer"
 				        		   style={MenuItem}/>
 			      	</Menu>
 	      		</div>
