@@ -1,15 +1,28 @@
-import React, { Component } from 'react';
+import {Route, BrowserRouter as Router } from 'react-router-dom'
+import React from 'react'
 import './App.css';
-import Email from './views/Email'
+import AboutMe from './views/MainLayout/AboutMe'
+import Projects from './views/MainLayout/Projects'
+import HomePage from './views/MainLayout/HomePage'
+import Resume from './views/MainLayout/Resume'
 
-class App extends Component {
 
-  render() {
+// const renderProjects      = () => <Projects/>
+// const renderAboutMe       = () => <AboutMe />
+// const renderHomePage      = () => <HomePage />
 
-    return (
-      	<Email/>
-    )
-  }
-}
+
+const App = () => (
+  <Router>
+
+      <div>
+       <HomePage/>      
+            <Route exact path="/" component={Projects}/>
+            <Route path="/aboutme" component={AboutMe}/>
+            <Route path="/resume" component={Resume}/>
+      </div>
+
+  </Router>
+)
 
 export default App;
