@@ -65,7 +65,7 @@ export default class Projects extends Component {
             <h4 style={ProjectDescription}>{project.Description}</h4>
             <div>
               <p>{project.Tech}</p>
-              <Image src={project.Image} href={project.Href}/>
+              <Image src={project.Image} href={project.Href} target='_blank' rel="noopener noreferrer"/>
             </div>
           </div>
         </Grid.Row>
