@@ -36,7 +36,7 @@ export default class Resume extends Component {
 	    				<Grid.Row>
 							<Grid.Column width={4} floated='right'>
 								<Button basic color="grey" 
-										href='https://drive.google.com/file/d/1h4PRB2bBDSAwy1bcM2yTaHUanQWXx7np/view?usp=sharing'>
+										href='https://drive.google.com/file/d/1wkRxKK06xvdsFHxq5usn5Olrg-DrgwF8/view?usp=sharing'>
 										Download Resume
 								</Button>
 							</Grid.Column>
@@ -127,7 +127,7 @@ export default class Resume extends Component {
 	    					</Grid.Column>
 	    					<Grid.Column width={12}>
 	    						<Grid.Row style={ResumeItem}> 
-	    							<h4>Division Administrative Coordinator June 2015 - Present</h4>
+	    							<h4>Division Administrative Coordinator June 2015 - June 2018</h4>
 	    							<p>Northwestern Memorial Hospital, Chicago, IL</p>
 	    							<List bulleted>
 	    								<List.Item>Facilitate physician recruitment, credentialing, and on-boarding</List.Item>

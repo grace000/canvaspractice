@@ -35,7 +35,7 @@ export default class AboutMe extends Component {
   				<Grid centered style={AboutContainer} stackable={3}>
 	    			<Grid.Column computer={10} tablet={16}>
 	    				<Grid.Row className="about__content" style={AboutContent}>
-	    					<p>I have a passion for creating quality 
+	    					<p>I have a passion for creating quality, 
 	    					 	user-friendly and civic-minded solutions. I design and develop 
 	    					 	applications for all devices.</p>
         					<p>During code breaks, I enjoy creating art, watching my cats chase 
