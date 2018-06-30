@@ -36,7 +36,10 @@ export default class Resume extends Component {
 	    				<Grid.Row>
 							<Grid.Column width={4} floated='right'>
 								<Button basic color="grey" 
-										href='https://drive.google.com/file/d/1wkRxKK06xvdsFHxq5usn5Olrg-DrgwF8/view?usp=sharing'>
+										href='https://drive.google.com/file/d/1wkRxKK06xvdsFHxq5usn5Olrg-DrgwF8/view?usp=sharing'
+										as='a'
+										target='_blank' 
+										rel="noopener noreferrer">
 										Download Resume
 								</Button>
 							</Grid.Column>
